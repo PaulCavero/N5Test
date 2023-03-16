@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\N5Test.Broker\N5Test.Broker.csproj" />
+    <ProjectReference Include="..\N5Test.Data\N5Test.Data.csproj" />
+    <ProjectReference Include="..\N5Test.Util\N5Test.Util.csproj" />
+  </ItemGroup>
+
+</Project>

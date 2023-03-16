@@ -1,0 +1,115 @@
+2023-03-16 12:45:30.548 -04:00 [INF] Now listening on: https://localhost:7032
+2023-03-16 12:45:30.582 -04:00 [INF] Now listening on: http://localhost:5032
+2023-03-16 12:45:30.586 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:45:30.587 -04:00 [INF] Hosting environment: Development
+2023-03-16 12:45:30.587 -04:00 [INF] Content root path: C:\Users\PcPaul\source\repos\N5Test\N5Test\
+2023-03-16 12:45:33.657 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/index.html - -
+2023-03-16 12:45:33.975 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - -
+2023-03-16 12:45:33.975 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_vs/browserLink - -
+2023-03-16 12:45:33.995 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/index.html - - - 200 - text/html;charset=utf-8 340.4616ms
+2023-03-16 12:45:33.995 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 19.2162ms
+2023-03-16 12:45:34.016 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.9142ms
+2023-03-16 12:45:34.108 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - -
+2023-03-16 12:45:34.254 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 145.9405ms
+2023-03-16 12:45:40.468 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - -
+2023-03-16 12:45:40.498 -04:00 [INF] Executing endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:45:40.517 -04:00 [INF] Route matched with {action = "GetAllPermisionTypes", controller = "PermisionTypes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Linq.IQueryable`1[N5Test.Models.PermissionTypes.PermissionTypeDTO]] GetAllPermisionTypes() on controller N5Test.Controllers.PermisionTypesController (N5Test).
+2023-03-16 12:45:40.755 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-16 12:45:40.763 -04:00 [INF] Executed action N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test) in 240.0428ms
+2023-03-16 12:45:40.765 -04:00 [INF] Executed endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:45:40.769 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - - - 500 - application/problem+json;+charset=utf-8 300.3943ms
+2023-03-16 12:47:47.070 -04:00 [INF] Now listening on: https://localhost:7032
+2023-03-16 12:47:47.107 -04:00 [INF] Now listening on: http://localhost:5032
+2023-03-16 12:47:47.111 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:47:47.111 -04:00 [INF] Hosting environment: Development
+2023-03-16 12:47:47.111 -04:00 [INF] Content root path: C:\Users\PcPaul\source\repos\N5Test\N5Test\
+2023-03-16 12:47:49.894 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/index.html - -
+2023-03-16 12:47:50.186 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_vs/browserLink - -
+2023-03-16 12:47:50.186 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - -
+2023-03-16 12:47:50.202 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 14.8611ms
+2023-03-16 12:47:50.211 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/index.html - - - 200 - text/html;charset=utf-8 321.8724ms
+2023-03-16 12:47:50.238 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 52.0446ms
+2023-03-16 12:47:50.331 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - -
+2023-03-16 12:47:50.469 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.9015ms
+2023-03-16 12:47:57.421 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - -
+2023-03-16 12:47:57.450 -04:00 [INF] Executing endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:47:57.468 -04:00 [INF] Route matched with {action = "GetAllPermisionTypes", controller = "PermisionTypes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Linq.IQueryable`1[N5Test.Models.PermissionTypes.PermissionTypeDTO]] GetAllPermisionTypes() on controller N5Test.Controllers.PermisionTypesController (N5Test).
+2023-03-16 12:47:57.668 -04:00 [ERR] Test
+System.ArgumentException: Test
+   at N5Test.Services.PermissionTypes.PermissionTypeService.RetrieveAllPermissionType() in C:\Users\PcPaul\source\repos\N5Test\N5Test\Services\PermissionTypes\PermissionTypeService.cs:line 42
+2023-03-16 12:47:57.895 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-16 12:47:57.902 -04:00 [INF] Executed action N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test) in 429.4555ms
+2023-03-16 12:47:57.905 -04:00 [INF] Executed endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:47:57.910 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - - - 500 - application/problem+json;+charset=utf-8 489.8740ms
+2023-03-16 12:50:39.964 -04:00 [INF] Now listening on: https://localhost:7032
+2023-03-16 12:50:40.011 -04:00 [INF] Now listening on: http://localhost:5032
+2023-03-16 12:50:40.023 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:50:40.027 -04:00 [INF] Hosting environment: Development
+2023-03-16 12:50:40.028 -04:00 [INF] Content root path: C:\Users\PcPaul\source\repos\N5Test\N5Test\
+2023-03-16 12:50:42.084 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/index.html - -
+2023-03-16 12:50:42.399 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - -
+2023-03-16 12:50:42.399 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_vs/browserLink - -
+2023-03-16 12:50:42.418 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/index.html - - - 200 - text/html;charset=utf-8 341.1034ms
+2023-03-16 12:50:42.419 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 18.7320ms
+2023-03-16 12:50:42.437 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.8976ms
+2023-03-16 12:50:42.531 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - -
+2023-03-16 12:50:42.672 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 141.2316ms
+2023-03-16 12:50:49.060 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - -
+2023-03-16 12:50:49.090 -04:00 [INF] Executing endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:50:49.108 -04:00 [INF] Route matched with {action = "GetAllPermisionTypes", controller = "PermisionTypes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Linq.IQueryable`1[N5Test.Models.PermissionTypes.PermissionTypeDTO]] GetAllPermisionTypes() on controller N5Test.Controllers.PermisionTypesController (N5Test).
+2023-03-16 12:50:49.307 -04:00 [ERR] Test
+System.ArgumentException: Test
+   at N5Test.Services.PermissionTypes.PermissionTypeService.RetrieveAllPermissionType() in C:\Users\PcPaul\source\repos\N5Test\N5Test\Services\PermissionTypes\PermissionTypeService.cs:line 42
+2023-03-16 12:50:49.379 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-16 12:50:49.386 -04:00 [INF] Executed action N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test) in 272.4729ms
+2023-03-16 12:50:49.389 -04:00 [INF] Executed endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:50:49.393 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - - - 500 - application/problem+json;+charset=utf-8 332.6690ms
+2023-03-16 12:51:00.679 -04:00 [INF] Now listening on: https://localhost:7032
+2023-03-16 12:51:00.741 -04:00 [INF] Now listening on: http://localhost:5032
+2023-03-16 12:51:00.750 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:51:00.753 -04:00 [INF] Hosting environment: Development
+2023-03-16 12:51:00.753 -04:00 [INF] Content root path: C:\Users\PcPaul\source\repos\N5Test\N5Test\
+2023-03-16 12:51:04.012 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/index.html - -
+2023-03-16 12:51:04.300 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - -
+2023-03-16 12:51:04.300 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_vs/browserLink - -
+2023-03-16 12:51:04.316 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 13.8367ms
+2023-03-16 12:51:04.318 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/index.html - - - 200 - text/html;charset=utf-8 309.9115ms
+2023-03-16 12:51:04.339 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.9660ms
+2023-03-16 12:51:04.435 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - -
+2023-03-16 12:51:04.623 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 187.9290ms
+2023-03-16 12:51:18.387 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - -
+2023-03-16 12:51:18.417 -04:00 [INF] Executing endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:51:18.434 -04:00 [INF] Route matched with {action = "GetAllPermisionTypes", controller = "PermisionTypes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Linq.IQueryable`1[N5Test.Models.PermissionTypes.PermissionTypeDTO]] GetAllPermisionTypes() on controller N5Test.Controllers.PermisionTypesController (N5Test).
+2023-03-16 12:51:18.632 -04:00 [ERR] Test
+System.ArgumentException: Test
+   at N5Test.Services.PermissionTypes.PermissionTypeService.RetrieveAllPermissionType() in C:\Users\PcPaul\source\repos\N5Test\N5Test\Services\PermissionTypes\PermissionTypeService.cs:line 42
+2023-03-16 12:51:18.711 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-16 12:51:18.719 -04:00 [INF] Executed action N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test) in 279.1529ms
+2023-03-16 12:51:18.721 -04:00 [INF] Executed endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:51:18.725 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - - - 500 - application/problem+json;+charset=utf-8 337.5928ms
+2023-03-16 12:52:19.454 -04:00 [INF] Now listening on: https://localhost:7032
+2023-03-16 12:52:19.521 -04:00 [INF] Now listening on: http://localhost:5032
+2023-03-16 12:52:19.528 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:52:19.529 -04:00 [INF] Hosting environment: Development
+2023-03-16 12:52:19.529 -04:00 [INF] Content root path: C:\Users\PcPaul\source\repos\N5Test\N5Test\
+2023-03-16 12:52:21.403 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/index.html - -
+2023-03-16 12:52:21.733 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - -
+2023-03-16 12:52:21.733 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/_vs/browserLink - -
+2023-03-16 12:52:21.748 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 12.3420ms
+2023-03-16 12:52:21.749 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/index.html - - - 200 - text/html;charset=utf-8 355.7573ms
+2023-03-16 12:52:21.763 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.8492ms
+2023-03-16 12:52:21.853 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - -
+2023-03-16 12:52:21.995 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 142.1821ms
+2023-03-16 12:52:27.698 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - -
+2023-03-16 12:52:27.729 -04:00 [INF] Executing endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:52:27.746 -04:00 [INF] Route matched with {action = "GetAllPermisionTypes", controller = "PermisionTypes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Linq.IQueryable`1[N5Test.Models.PermissionTypes.PermissionTypeDTO]] GetAllPermisionTypes() on controller N5Test.Controllers.PermisionTypesController (N5Test).
+2023-03-16 12:52:27.942 -04:00 [ERR] Test
+System.ArgumentException: Test
+   at N5Test.Services.PermissionTypes.PermissionTypeService.RetrieveAllPermissionType() in C:\Users\PcPaul\source\repos\N5Test\N5Test\Services\PermissionTypes\PermissionTypeService.cs:line 42
+2023-03-16 12:52:28.017 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-16 12:52:28.027 -04:00 [INF] Executed action N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test) in 274.0328ms
+2023-03-16 12:52:28.029 -04:00 [INF] Executed endpoint 'N5Test.Controllers.PermisionTypesController.GetAllPermisionTypes (N5Test)'
+2023-03-16 12:52:28.032 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7032/api/v1/PermisionTypes - - - 500 - application/problem+json;+charset=utf-8 333.6503ms
+2023-03-16 12:54:23.544 -04:00 [ERR] Test
+System.ArgumentException: Test
+   at N5Test.Services.PermissionTypes.PermissionTypeService.RetrieveAllPermissionType() in C:\Users\PcPaul\source\repos\N5Test\N5Test\Services\PermissionTypes\PermissionTypeService.cs:line 42
