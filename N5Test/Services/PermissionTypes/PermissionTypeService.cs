@@ -1,7 +1,9 @@
 ﻿using N5Test.Broker.Loggings;
 using N5Test.Data.Models.PermissionTypes;
 using N5Test.Data.UnitOfWork;
+using N5Test.Models.Kafka;
 using N5Test.Models.PermissionTypes;
+using N5Test.Services.KafkaProvider;
 
 namespace N5Test.Services.PermissionTypes
 {
@@ -9,11 +11,13 @@ namespace N5Test.Services.PermissionTypes
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ILoggingBroker loggingBroker;
+        private readonly IKafkaService kafkaService;
 
-        public PermissionTypeService(IUnitOfWork unitOfWork, ILoggingBroker loggingBroker)
+        public PermissionTypeService(IUnitOfWork unitOfWork, ILoggingBroker loggingBroker, IKafkaService kafkaService)
         {
             this.unitOfWork = unitOfWork;
             this.loggingBroker = loggingBroker;
+            this.kafkaService = kafkaService;
         }
         public Task AddPermissionTypeAsync(PermissionTypeDTO permissionTypeDTO)
         {
@@ -24,6 +28,8 @@ namespace N5Test.Services.PermissionTypes
                 unitOfWork.PermisionTypeRepository.
                     Insert(ToPermissionType(permissionTypeDTO));
                 unitOfWork.Save();
+                kafkaService.SendKafkaMessage(new KafkaOperation() 
+                { Id = Guid.NewGuid(), NameOperation = "PermissionTypeResquest" });
             }
             catch (Exception ex)
             {
@@ -40,7 +46,8 @@ namespace N5Test.Services.PermissionTypes
             try
             {
                 IEnumerable<PermisionType> Permissions = unitOfWork.PermisionTypeRepository.Get();
-
+                kafkaService.SendKafkaMessage(new KafkaOperation()
+                { Id = Guid.NewGuid(), NameOperation = "PermissionTypeGet" });
                 return Permissions.Select(x => ToPermissionTypeDTO(x)).AsQueryable<PermissionTypeDTO>();
             }
             catch (Exception ex)
@@ -57,6 +64,8 @@ namespace N5Test.Services.PermissionTypes
             {
                 ValidatePermissionTypeId(permissionTypeId);
                 PermisionType permisionType = unitOfWork.PermisionTypeRepository.GetByID(permissionTypeId);
+                kafkaService.SendKafkaMessage(new KafkaOperation()
+                { Id = Guid.NewGuid(), NameOperation = "PermissionTypeGetById" });
                 return new ValueTask<PermissionTypeDTO>(ToPermissionTypeDTO(permisionType));
             }
             catch (Exception ex)
@@ -75,6 +84,8 @@ namespace N5Test.Services.PermissionTypes
 
                 unitOfWork.PermisionTypeRepository.Update(ToPermissionType(permissionTypeDTO));
                 unitOfWork.Save();
+                kafkaService.SendKafkaMessage(new KafkaOperation()
+                { Id = Guid.NewGuid(), NameOperation = "PermissionTypeModify" });
             }
             catch (Exception ex)
             {
@@ -95,6 +106,7 @@ namespace N5Test.Services.PermissionTypes
                 ValidatePermissionTypeExist(ToPermissionTypeDTO(permisionType));
                 unitOfWork.PermisionTypeRepository.Delete(permisionType);
                 unitOfWork.Save();
+
             }
             catch (Exception ex)
             {

@@ -1,7 +1,9 @@
 ﻿using N5Test.Broker.Loggings;
 using N5Test.Data.Models.Permissions;
 using N5Test.Data.UnitOfWork;
+using N5Test.Models.Kafka;
 using N5Test.Models.Permissions;
+using N5Test.Services.KafkaProvider;
 
 namespace N5Test.Services.Permissions
 {
@@ -9,11 +11,13 @@ namespace N5Test.Services.Permissions
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ILoggingBroker loggingBroker;
+        private readonly IKafkaService kafkaService;
 
-        public PermissionService(IUnitOfWork unitOfWork, ILoggingBroker loggingBroker)
+        public PermissionService(IUnitOfWork unitOfWork, ILoggingBroker loggingBroker, IKafkaService kafkaService)
         {
             this.unitOfWork = unitOfWork;
             this.loggingBroker = loggingBroker;
+            this.kafkaService = kafkaService;
         }
 
         public Task AddPermissionAsync(PermissionDTO permissionDTO)
@@ -25,6 +29,8 @@ namespace N5Test.Services.Permissions
                 unitOfWork.PermisionRepository.
                     Insert(ToPermission(permissionDTO));
                 unitOfWork.Save();
+                kafkaService.SendKafkaMessage(new KafkaOperation() 
+                {Id = Guid.NewGuid(), NameOperation= "PermissionResquest" });
             }
             catch (Exception ex)
             {
@@ -41,7 +47,8 @@ namespace N5Test.Services.Permissions
             try
             {
                 IEnumerable<Permission> Permissions = unitOfWork.PermisionRepository.Get();
-
+                kafkaService.SendKafkaMessage(new KafkaOperation()
+                { Id = Guid.NewGuid(), NameOperation = "PermissionGetAll" });
                 return Permissions.Select(x => ToPermissionDTO(x)).AsQueryable<PermissionDTO>();
             }
             catch (Exception ex)
@@ -58,6 +65,8 @@ namespace N5Test.Services.Permissions
             {
                 ValidatePermissionId(permissionId);
                 Permission permission = unitOfWork.PermisionRepository.GetByID(permissionId);
+                kafkaService.SendKafkaMessage(new KafkaOperation()
+                { Id = Guid.NewGuid(), NameOperation = "PermissionGetById" });
                 return new ValueTask<PermissionDTO>(ToPermissionDTO(permission));
             }
             catch (Exception ex)
@@ -76,6 +85,8 @@ namespace N5Test.Services.Permissions
 
                 unitOfWork.PermisionRepository.Update(ToPermission(permissionDTO));
                 unitOfWork.Save();
+                kafkaService.SendKafkaMessage(new KafkaOperation()
+                { Id = Guid.NewGuid(), NameOperation = "PermissionModify" });
             }
             catch (Exception ex)
             {

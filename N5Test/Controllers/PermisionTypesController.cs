@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using N5Test.Models.PermissionTypes;
+using N5Test.Services.KafkaProvider;
 using N5Test.Services.PermissionTypes;
 
 namespace N5Test.Controllers
@@ -9,10 +10,12 @@ namespace N5Test.Controllers
     public class PermisionTypesController : ControllerBase
     {
         private readonly IPermissionTypeService permissionTypeService;
+        private readonly IKafkaService kafkaOperations;
 
-        public PermisionTypesController(IPermissionTypeService permissionTypeService)
+        public PermisionTypesController(IPermissionTypeService permissionTypeService, IKafkaService kafkaOperations)
         {
             this.permissionTypeService = permissionTypeService;
+            this.kafkaOperations = kafkaOperations;
         }
 
         [HttpGet]
