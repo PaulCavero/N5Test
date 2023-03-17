@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.Data", "N5Test.Data\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.Broker", "N5Test.Broker\N5Test.Broker.csproj", "{98231D98-422E-4B9B-A309-EC9E3848B183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5Test.Util", "N5Test.Util\N5Test.Util.csproj", "{A71D5598-7EF0-4B16-B47A-B2E13FE35566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.Util", "N5Test.Util\N5Test.Util.csproj", "{A71D5598-7EF0-4B16-B47A-B2E13FE35566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5Test.IntegrationTest", "N5Test.IntegrationTest\N5Test.IntegrationTest.csproj", "{121100A4-17F0-4171-8EB3-A17870B8A971}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A71D5598-7EF0-4B16-B47A-B2E13FE35566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A71D5598-7EF0-4B16-B47A-B2E13FE35566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A71D5598-7EF0-4B16-B47A-B2E13FE35566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121100A4-17F0-4171-8EB3-A17870B8A971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121100A4-17F0-4171-8EB3-A17870B8A971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121100A4-17F0-4171-8EB3-A17870B8A971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121100A4-17F0-4171-8EB3-A17870B8A971}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
