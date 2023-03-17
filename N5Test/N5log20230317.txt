@@ -1,0 +1,8 @@
+2023-03-17 17:50:58.064 -04:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at N5Test.Services.Permissions.PermissionService.ToPermissionDTO(Permission permission) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 116
+   at N5Test.Services.Permissions.PermissionService.RetrievePermissionByIdAsync(Int32 permissionId) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 66
+2023-03-17 17:51:09.867 -04:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at N5Test.Services.Permissions.PermissionService.ToPermissionDTO(Permission permission) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 116
+   at N5Test.Services.Permissions.PermissionService.RetrievePermissionByIdAsync(Int32 permissionId) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 66

@@ -6,6 +6,7 @@ using N5Test.Services.Permissions;
 using N5Test.Services.PermissionTypes;
 using Serilog;
 using N5Test.Util.Configurations;
+using N5Test.Services.KafkaProvider;
 
 var builder = WebApplication.CreateBuilder(args);
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -20,6 +21,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.Configure<DataBaseConfiguration>(configuration.GetSection("ConnectionStrings"));
 builder.Services.AddDbContext<N5testContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<IKafkaService, KafkaService>();
 builder.Services.AddTransient<IPermissionTypeService, PermissionTypeService>();
 builder.Services.AddTransient<IPermissionService, PermissionService>();
 builder.Services.AddLogging();
