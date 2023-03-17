@@ -10,7 +10,7 @@ namespace N5Test.Data;
 public partial class N5testContext : DbContext
 {
     private readonly IOptions<DataBaseConfiguration> options;
-
+    
     public N5testContext(IOptions<DataBaseConfiguration> options)
     {
         this.options = options;

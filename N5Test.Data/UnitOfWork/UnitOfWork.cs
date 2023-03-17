@@ -1,41 +1,42 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using N5Test.Data.Models.Permissions;
 using N5Test.Data.Models.PermissionTypes;
+using N5Test.Data.Repository;
 
 namespace N5Test.Data.UnitOfWork
 {
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        private GenericRepository<PermisionType> permisionTypeRepository;
-        private GenericRepository<Permission> permissionRepository;
-        private readonly N5testContext context;
+        private IRepository<PermisionType> permisionTypeRepository;
+        private IRepository<Permission> permissionRepository;
+        private N5testContext context = null;
 
         public UnitOfWork(N5testContext context)
         {
             this.context = context;
         }
 
-        public GenericRepository<PermisionType> PermisionTypeRepository
+        public IRepository<PermisionType> PermisionTypeRepository
         {
             get
             {
 
                 if (permisionTypeRepository == null)
                 {
-                    permisionTypeRepository = new GenericRepository<PermisionType>(context);
+                    permisionTypeRepository = new Repository<PermisionType>(context);
                 }
                 return permisionTypeRepository;
             }
         }
 
-        public GenericRepository<Permission> PermisionRepository
+        public IRepository<Permission> PermisionRepository
         {
             get
             {
 
                 if (permissionRepository == null)
                 {
-                    permissionRepository = new GenericRepository<Permission>(context);
+                    permissionRepository = new Repository<Permission>(context);
                 }
                 return permissionRepository;
             }

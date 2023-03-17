@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace N5Test.Data
+namespace N5Test.Data.Repository
 {
-    public class GenericRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         internal N5testContext context;
         internal DbSet<TEntity> dbSet;
 
-        public GenericRepository(N5testContext context)
+        public Repository(N5testContext context)
         {
             this.context = context;
             dbSet = context.Set<TEntity>();
