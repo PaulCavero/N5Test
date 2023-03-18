@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test", "N5Test\N5Test.csproj", "{D8D0DC55-0042-44D2-B8A4-D5B83C56A764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.API", "N5Test\N5Test.API.csproj", "{D8D0DC55-0042-44D2-B8A4-D5B83C56A764}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.Data", "N5Test.Data\N5Test.Data.csproj", "{0D0F5847-F097-46BF-8305-CD7F74500FC9}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.Broker", "N5Test.Bro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.Util", "N5Test.Util\N5Test.Util.csproj", "{A71D5598-7EF0-4B16-B47A-B2E13FE35566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5Test.IntegrationTest", "N5Test.IntegrationTest\N5Test.IntegrationTest.csproj", "{121100A4-17F0-4171-8EB3-A17870B8A971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5Test.IntegrationTest", "N5Test.IntegrationTest\N5Test.IntegrationTest.csproj", "{121100A4-17F0-4171-8EB3-A17870B8A971}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

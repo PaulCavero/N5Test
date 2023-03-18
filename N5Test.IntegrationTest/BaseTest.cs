@@ -5,6 +5,7 @@ using N5Test.Data.Models.Permissions;
 using N5Test.Data.Repository;
 using N5Test.Models.Permissions;
 using N5Test.Models.PermissionTypes;
+using N5Test.Services.ElasticProvider;
 using N5Test.Services.KafkaProvider;
 using N5Test.Services.Permissions;
 using RESTFulSense.Clients;
@@ -26,6 +27,7 @@ namespace N5Test.IntegrationTest
         protected readonly Mock<PermissionService> permissionServiceMock;
         protected readonly Mock<PermisionTypesController> permisionTypesControllerMock;
         protected readonly Mock<IKafkaService> kafkaMock;
+        protected readonly Mock<IElasticService> elastickMock;
 
         public BaseTest()
         {
@@ -38,11 +40,13 @@ namespace N5Test.IntegrationTest
                 Returns(this.repositoryPermission.Object);
             this.loggingBrokerMock = new Mock<ILoggingBroker>();
             this.kafkaMock = new Mock<IKafkaService>();
+            this.elastickMock = new Mock<IElasticService>();
             this.permissionTypeService =
                 new PermissionTypeService(this.unitOfWorkMock.Object, this.loggingBrokerMock.Object, this.kafkaMock.Object);
 
             this.permissionService =
-                new PermissionService(this.unitOfWorkMock.Object, this.loggingBrokerMock.Object, this.kafkaMock.Object);
+                new PermissionService(this.unitOfWorkMock.Object, this.loggingBrokerMock.Object,
+                this.kafkaMock.Object, this.elastickMock.Object);
             this.permissionTypeServiceMock = new Mock<IPermissionTypeService>();
             this.permissionServiceMock = new Mock<PermissionService>();
             this.iPermissionServiceMock = new Mock<IPermissionService>();

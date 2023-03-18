@@ -20,6 +20,7 @@ namespace N5Test.Services.KafkaProvider
 
             try
             {
+                if (kafkaOperation == null) { throw new ArgumentException("The parameter cant be null"); }
                 string? state;
 
                 var response = await producer.ProduceAsync("Operations-topic",
@@ -56,9 +57,11 @@ namespace N5Test.Services.KafkaProvider
                             (response.Message.Value);
                     }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                string errorMessage = $"An error occurred using GetKafkaMessage.";
+                this.loggingBroker.LogError(ex);
+                throw new ArgumentException(errorMessage, ex);
             }
 
         }

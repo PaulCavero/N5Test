@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using N5Test.Models.Elastic;
 using N5Test.Models.PermissionTypes;
+using N5Test.Services.ElasticProvider;
 using N5Test.Services.KafkaProvider;
 using N5Test.Services.PermissionTypes;
+using Nest;
 
 namespace N5Test.Controllers
 {
@@ -11,11 +14,14 @@ namespace N5Test.Controllers
     {
         private readonly IPermissionTypeService permissionTypeService;
         private readonly IKafkaService kafkaOperations;
+        private readonly IElasticService elasticService;
 
-        public PermisionTypesController(IPermissionTypeService permissionTypeService, IKafkaService kafkaOperations)
+        public PermisionTypesController(IPermissionTypeService permissionTypeService, 
+            IKafkaService kafkaOperations, IElasticService elasticService)
         {
             this.permissionTypeService = permissionTypeService;
             this.kafkaOperations = kafkaOperations;
+            this.elasticService = elasticService;
         }
 
         [HttpGet]
@@ -25,6 +31,7 @@ namespace N5Test.Controllers
             {   
                 IQueryable permissionTypes = 
                     this.permissionTypeService.RetrieveAllPermissionType();
+                
                 return Ok(permissionTypes);
             }
             catch (Exception ex)

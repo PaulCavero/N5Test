@@ -7,6 +7,8 @@ using N5Test.Services.PermissionTypes;
 using Serilog;
 using N5Test.Util.Configurations;
 using N5Test.Services.KafkaProvider;
+using FluentAssertions.Common;
+using N5Test.Services.ElasticProvider;
 
 var builder = WebApplication.CreateBuilder(args);
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -26,6 +28,7 @@ builder.Services.AddTransient<IPermissionTypeService, PermissionTypeService>();
 builder.Services.AddTransient<IPermissionService, PermissionService>();
 builder.Services.AddLogging();
 builder.Services.AddTransient<ILoggingBroker, LoggingBroker>();
+builder.Services.AddSingleton<IElasticService,ElasticService>();
 
 
 
