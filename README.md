@@ -12,4 +12,5 @@ For the installation is necessary first:
 https://github.com/PaulCavero/N5Test/blob/master/N5Test/appsettings.Development.json
 
 - The Last Step is create the default index on Elastic Search. Write "PUT /permission" on Dev Tools from Kibana in Local enviroment:
+- For aditional informatio to end points https://github.com/PaulCavero/N5Test/blob/master/Initial/Diagram/DescriptionToEndPoints.png
 
