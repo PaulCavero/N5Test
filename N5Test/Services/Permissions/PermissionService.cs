@@ -3,6 +3,7 @@ using N5Test.Data.Models.Permissions;
 using N5Test.Data.UnitOfWork;
 using N5Test.Models.Kafka;
 using N5Test.Models.Permissions;
+using N5Test.Services.ElasticProvider;
 using N5Test.Services.KafkaProvider;
 
 namespace N5Test.Services.Permissions
@@ -12,12 +13,16 @@ namespace N5Test.Services.Permissions
         private readonly IUnitOfWork unitOfWork;
         private readonly ILoggingBroker loggingBroker;
         private readonly IKafkaService kafkaService;
+        private readonly IElasticService elasticService;
 
-        public PermissionService(IUnitOfWork unitOfWork, ILoggingBroker loggingBroker, IKafkaService kafkaService)
+        public PermissionService(IUnitOfWork unitOfWork, 
+            ILoggingBroker loggingBroker, IKafkaService kafkaService,
+            IElasticService elasticService)
         {
             this.unitOfWork = unitOfWork;
             this.loggingBroker = loggingBroker;
             this.kafkaService = kafkaService;
+            this.elasticService = elasticService;
         }
 
         public Task AddPermissionAsync(PermissionDTO permissionDTO)
@@ -31,6 +36,7 @@ namespace N5Test.Services.Permissions
                 unitOfWork.Save();
                 kafkaService.SendKafkaMessage(new KafkaOperation() 
                 {Id = Guid.NewGuid(), NameOperation= "PermissionResquest" });
+                elasticService.UploadPermission(permissionDTO);
             }
             catch (Exception ex)
             {
