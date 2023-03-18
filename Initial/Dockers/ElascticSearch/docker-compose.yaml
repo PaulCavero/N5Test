@@ -1,0 +1,41 @@
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - cluster.name=clusterPermission
+      - node.name=nodePermission
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"    
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - esnetwork
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.16.3
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_NAME=kibana.example.com
+      - ELASTICSEARCH_USERNAME=myusername
+      - ELASTICSEARCH_PASSWORD=mypassword
+    ports:
+     - "5601:5601"
+    networks:
+     - esnetwork
+    depends_on:
+     - elasticsearch
+volumes:
+  esdata:
+    driver: local
+networks:
+    esnetwork:
+        driver: bridge
