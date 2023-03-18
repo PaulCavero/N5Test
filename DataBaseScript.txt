@@ -1,0 +1,39 @@
+CREATE DATABASE [N5Test]
+GO
+USE [N5Test]
+GO
+/****** Object:  Table [dbo].[PermisionTypes]    Script Date: 3/17/2023 9:27:40 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [N5Test].[dbo].[PermisionTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [nvarchar](150) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Permissions]    Script Date: 3/17/2023 9:27:40 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [N5Test].[dbo].[Permissions](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [nvarchar](150) NULL,
+	[EmpleyeeForename] [nvarchar](150) NOT NULL,
+	[EnployeeSurname] [nvarchar](150) NOT NULL,
+	[PermissionTypeId] [int] NOT NULL,
+	[PermissionDate] [date] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Permissions]  WITH CHECK ADD FOREIGN KEY([PermissionTypeId])
+REFERENCES [dbo].[PermisionTypes] ([Id])
+GO
