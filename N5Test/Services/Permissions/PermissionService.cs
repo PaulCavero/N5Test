@@ -125,6 +125,7 @@ namespace N5Test.Services.Permissions
 
         public static PermissionDTO ToPermissionDTO(Permission permission)
         {
+            if (permission == null) { return new PermissionDTO(); }
             return new PermissionDTO
             {
                 Id = permission.Id,
@@ -138,6 +139,7 @@ namespace N5Test.Services.Permissions
 
         public static Permission ToPermission(PermissionDTO permissionDTO)
         {
+            if (permissionDTO == null) { return new Permission(); }
             return new Permission
             {
                 Id = permissionDTO.Id,

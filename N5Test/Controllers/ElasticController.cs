@@ -15,12 +15,12 @@ namespace N5Test.Controllers
         {
             this.elasticService = elasticService;
         }
-        [HttpGet("{name}")]
-        public ActionResult<List<PermissionDTO>> GetPermissionsByName(string name)
+        [HttpGet("{empleyeeName}")]
+        public ActionResult<List<PermissionDTO>> GetPermissionsByName(string empleyeeName)
         {
             try
             {
-                var response = this.elasticService.SearchPermission(name);
+                var response = this.elasticService.SearchPermission(empleyeeName);
                 var model = new SearchResultModel { Results = response.Documents.ToList() };
                 return Ok(model);
             }

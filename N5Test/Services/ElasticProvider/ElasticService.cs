@@ -1,4 +1,5 @@
-﻿using N5Test.Data.Models.Permissions;
+﻿using N5Test.Broker.Loggings;
+using N5Test.Data.Models.Permissions;
 using N5Test.Models.Permissions;
 using Nest;
 namespace N5Test.Services.ElasticProvider
@@ -6,11 +7,13 @@ namespace N5Test.Services.ElasticProvider
     public class ElasticService : IElasticService
     {
         private readonly IConfiguration configuration;
+        private readonly ILoggingBroker loggingBroker;
         private readonly ElasticClient client;
 
-        public ElasticService(IConfiguration configuration)
+        public ElasticService(IConfiguration configuration, ILoggingBroker loggingBroker)
         {
             this.configuration = configuration;
+            this.loggingBroker = loggingBroker;
             client = new ElasticClient(
                 new ConnectionSettings(new Uri(configuration.GetValue<string>("ElasticCloud:Endpoint")))
                     .DefaultIndex("permission")
@@ -20,7 +23,11 @@ namespace N5Test.Services.ElasticProvider
 
         public ISearchResponse<Permission> SearchPermission(string searchText)
         {
-            return client.Search<Permission>(s => s
+            try
+            {
+                if (searchText == string.Empty) { throw new ArgumentException("The parameter cant be null"); };
+
+                return client.Search<Permission>(s => s
                 .From(0)
                 .Size(10)
                 .Query(q => q
@@ -29,11 +36,30 @@ namespace N5Test.Services.ElasticProvider
                         .Query(searchText)
                     )
                 ));
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"An error occurred using SearchPermission.";
+                this.loggingBroker.LogError(ex);
+                throw new ArgumentException(errorMessage, ex);
+            }
+            
         }
 
         public void UploadPermission(PermissionDTO permission)
         {
-            var result = client.IndexDocument<PermissionDTO>(permission);
+            try
+            {
+                if (permission == null) { throw new ArgumentException("The parameter cant be null"); }
+                var result = client.IndexDocument<PermissionDTO>(permission);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"An error occurred using UploadPermission.";
+                this.loggingBroker.LogError(ex);
+                throw new ArgumentException(errorMessage, ex);
+            }
+            
         }
     }
 }

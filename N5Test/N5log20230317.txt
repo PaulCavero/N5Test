@@ -6,3 +6,15 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 System.NullReferenceException: Object reference not set to an instance of an object.
    at N5Test.Services.Permissions.PermissionService.ToPermissionDTO(Permission permission) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 116
    at N5Test.Services.Permissions.PermissionService.RetrievePermissionByIdAsync(Int32 permissionId) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 66
+2023-03-17 21:05:28.301 -04:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at N5Test.Services.Permissions.PermissionService.ToPermissionDTO(Permission permission) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 128
+   at N5Test.Services.Permissions.PermissionService.RetrievePermissionByIdAsync(Int32 permissionId) in C:\Users\PcPaul\N5Test\N5Test\Services\Permissions\PermissionService.cs:line 76
+2023-03-17 21:12:29.187 -04:00 [ERR] Local: Message timed out
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at N5Test.Services.KafkaProvider.KafkaService.SendKafkaMessage(KafkaOperation kafkaOperation) in C:\Users\PcPaul\N5Test\N5Test\Services\KafkaProvider\KafkaService.cs:line 25
+2023-03-17 21:14:12.091 -04:00 [ERR] Local: Message timed out
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at N5Test.Services.KafkaProvider.KafkaService.SendKafkaMessage(KafkaOperation kafkaOperation) in C:\Users\PcPaul\N5Test\N5Test\Services\KafkaProvider\KafkaService.cs:line 25
