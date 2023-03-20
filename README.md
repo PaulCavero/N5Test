@@ -1,11 +1,8 @@
 # N5Test
 For the installation is necessary first:
-- The first diagram explains the architecture implemented in the project. 
-  https://github.com/PaulCavero/N5Test/blob/master/Initial/Diagram/Arquitecture.drawio.png
-- The second are the ends points created 
-  https://github.com/PaulCavero/N5Test/blob/master/Initial/Diagram/DescriptionToEndPoints.png
--The last diagram is a design to database.
-  https://github.com/PaulCavero/N5Test/blob/master/Initial/Diagram/DataBaseDiagram.PNG
+- The first diagram explains the architecture implemented in the project. https://github.com/PaulCavero/N5Test/blob/master/Initial/Diagram/Arquitecture.drawio.png
+- The second are the ends points created. https://github.com/PaulCavero/N5Test/blob/master/Initial/Diagram/DescriptionToEndPoints.png
+-The last diagram is a design to database. https://github.com/PaulCavero/N5Test/blob/master/Initial/Diagram/DataBaseDiagram.PNG
 
 - Run Script Database  https://github.com/PaulCavero/N5Test/blob/master/Initial/DataBase/ScriptDataBase.txt
 
